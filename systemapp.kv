@@ -1,0 +1,228 @@
+Container:
+
+<Container>:
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	licenseNumber: licenseNumber
+	name: name
+	surname: surname
+	dob: dob
+	nationality: nationality
+	club: club
+	position: position
+	debut: debut  
+	searchstring: searchstring
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	orientation: "vertical"
+	GridLayout:
+		cols: 3
+		size_hint: 1, None
+        height:"50dp"
+		padding: "10dp"
+		Label:
+			text: "National-league"
+			font_size: 25
+			size_hint: .60, 1
+			background_color:(11/255.0, 34/255.0, 33/255.0, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+			#pos_hint: 
+		TextInput:
+			multiline:False
+			size_hint: .35, 1
+			id: searchstring
+		Button:
+			id: btn
+			text: "A"
+			size_hint: .04, 1
+			on_press: root.searchit()
+			Image:
+				source: "image/icon.jpg"
+				center_x: self.parent.center_x
+				center_y: self.parent.center_y
+
+#======================================================================================================
+
+	BoxLayout:
+		orientaion: "vertical"
+		spacing: "10dp"
+
+		BoxLayout:
+			orientation: "vertical"
+	#============================================================================================
+			BoxLayout:
+				orientation: "vertical"
+				padding: "20dp"
+				spacing: "10dp"
+				size_hint: 1, .6
+		#=================================================================================
+				GridLayout:
+					cols: 2
+					size_hint: 1, None
+					height: "30dp"
+					#orientaion: "horizontal"
+					Label:
+						text: "Name:"
+						size_hint: .2, 1
+						color:(0,0,0,1)
+					TextInput:
+						id: name
+						size_hint: .4, 1
+						#height: "10dp"
+						multiline:False
+
+		#==================================================================================
+
+				GridLayout:
+					cols: 2
+					size_hint: 1, None
+					height: "30dp"
+					#orientaion: "horizontal"
+					Label:
+						text: "Surname:"
+						size_hint: .2, 1
+						color:(0,0,0,1)
+					TextInput:
+						id: surname
+						size_hint: .4, 1
+						multiline:False
+
+		#====================================================================================
+
+				GridLayout:
+					cols: 2
+					size_hint: 1, None
+					height: "30dp"
+					#orientaion: "horizontal"
+					Label:
+						text: "Date of Birth:"
+						size_hint: .2, 1
+						color:(0,0,0,1)
+					TextInput:
+						id: dob
+						size_hint: .4, 1
+						multiline:False
+
+		#=====================================================================================
+
+				GridLayout:
+					cols: 2
+					size_hint: 1, None
+					height: "30dp"
+					#orientaion: "horizontal"
+					Label:
+						text: "Nationality:"
+						size_hint: .2, 1
+						color:(0,0,0,1)
+					TextInput:
+						id: nationality
+						size_hint: .4, 1
+						multiline:False
+
+			BoxLayout:
+				orientation: "vertical"
+				padding: "20dp"
+				spacing: "10dp"
+				size_hint: 1, .6
+				GridLayout:
+					cols: 2
+					size_hint: 1, None
+					height: "30dp"
+					#orientaion: "horizontal"
+					Label:
+						text: "Club:"
+						size_hint: .2, 1
+						color:(0,0,0,1)
+					TextInput:
+						id: club
+						size_hint: .4, 1
+						#height: "10dp"
+						multiline:False
+
+		#==================================================================================
+
+				GridLayout:
+					cols: 2
+					size_hint: 1, None
+					height: "30dp"
+					#orientaion: "horizontal"
+					Label:
+						text: "Position:"
+						size_hint: .2, 1
+						color:(0,0,0,1)
+					TextInput:
+						id: position
+						size_hint: .4, 1
+						multiline:False
+
+		#====================================================================================
+
+				GridLayout:
+					cols: 2
+					size_hint: 1, None
+					height: "30dp"
+					#orientaion: "horizontal"
+					Label:
+						text: "Debut:"
+						size_hint: .2, 1
+						color:(0,0,0,1)
+					TextInput:
+						id: debut
+						size_hint: .4, 1
+						multiline:False
+
+		#=====================================================================================
+
+				GridLayout:
+					cols: 2
+					size_hint: 1, None
+					height: "30dp"
+					#orientaion: "horizontal"
+					Label:
+						text: "License No:"
+						size_hint: .2, 1
+						color:(0,0,0,1)
+					TextInput:
+						id: licenseNumber
+						size_hint: .4, 1
+						multiline:False
+
+	#=====================================================================================================
+
+		BoxLayout:
+			padding: "15dp"
+			size_hint: .40, 1
+			orientation: "vertical"
+			Label:
+				size_hint: 1, .30
+				text: "wesh alors?"
+				color:(0,0,0,1)
+				background_color:(205/255.0, 238/255.0, 217/255.0, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+			Button:
+				text: "Save"
+				size_hint: 1, .20
+				background_normal:""
+				background_color: "#36A149"
+				on_press: root.saveit()
+			Button:
+				text: "Update"
+				size_hint: 1, .20
+				background_normal:""
+				background_color: "#2B6282"
+				on_press: root.updateit()
+			Button:
+				text: "Delete"
+				size_hint: 1, .20
+				background_normal:""
+				background_color: (1,0,0,1)
+				on_press: root.deleteit()
